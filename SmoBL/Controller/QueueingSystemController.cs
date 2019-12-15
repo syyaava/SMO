@@ -1,4 +1,5 @@
 ﻿using SmoBL.Model;
+using System;
 using System.Threading.Tasks;
 
 namespace SmoBL.Controller
@@ -86,7 +87,8 @@ namespace SmoBL.Controller
             ulong lastSpawn = 0;
             while(sourceController.IsOnline)
             {
-                if (sourceController.Source.SpawnDelay < timer - lastSpawn)
+                var rnd = RandomSpawnTime(sourceController.Source.SpawnDelay * 0.75, sourceController.Source.SpawnDelay * 1.25);
+                if (rnd < timer - lastSpawn)
                 {
                     lastSpawn = timer;
                     AddRequest(sourceController.SpawnRequest(processingTime));
@@ -96,6 +98,13 @@ namespace SmoBL.Controller
                 timer++;
             }
         }
+
+        private float RandomSpawnTime(double a, double b)
+        {
+            var rnd = new Random().NextDouble();
+            return (float)(a * rnd + b * (1 - rnd));
+        }
+
         /// <summary>
         /// Обработка заявок в каналах.
         /// </summary>
