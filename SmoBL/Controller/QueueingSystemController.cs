@@ -110,8 +110,7 @@ namespace SmoBL.Controller
                 }
                 else if (ch.Channel.CurRequest != null)
                 {
-                    statisticController.AddTimeInSystem(ch.Channel.CurRequest.TimeInSystem + 
-                                                        ch.Channel.CurRequest.ProcessingTime);
+                    statisticController.AddTimeInSystem(ch.Channel.CurRequest.TimeInSystem);
                     ch.Channel.CurRequest = null;
                     ch.Channel.Timer = 0;
                     statisticController.AddServicedRequest();

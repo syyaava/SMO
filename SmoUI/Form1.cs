@@ -20,6 +20,7 @@ namespace SmoUI
 
         private void StartSimulation_Button_Click(object sender, EventArgs e)
         {
+            SimulationInfo_Label.Text = "ИДЁТ СИМУЛЯЦИЯ.";
             int countChannel;
             countChannel = GetCountChannel();
 
@@ -90,6 +91,7 @@ namespace SmoUI
         {
             sourceController.IsOnline = false;
             GetStatistic();
+            SimulationInfo_Label.Text = "";
         }
 
         private void GetStatistic()

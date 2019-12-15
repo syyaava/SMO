@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoBL", "SmoBL\SmoBL.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoUI", "SmoUI\SmoUI.csproj", "{2381A41C-C758-4749-882C-9ED929AE32C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E71111B7-98E5-4238-A393-375F353FFEBE}"
+	ProjectSection(SolutionItems) = preProject
+		TODO.cs = TODO.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

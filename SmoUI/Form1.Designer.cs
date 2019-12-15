@@ -40,6 +40,7 @@
             this.ProcessingTime_TextBox = new System.Windows.Forms.TextBox();
             this.CurTime_Label = new System.Windows.Forms.Label();
             this.Statistic_RichTextBox = new System.Windows.Forms.RichTextBox();
+            this.SimulationInfo_Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // StartSimulation_Button
@@ -149,11 +150,21 @@
             this.Statistic_RichTextBox.TabIndex = 11;
             this.Statistic_RichTextBox.Text = "";
             // 
+            // SimulationInfo_Label
+            // 
+            this.SimulationInfo_Label.AutoSize = true;
+            this.SimulationInfo_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SimulationInfo_Label.Location = new System.Drawing.Point(707, 245);
+            this.SimulationInfo_Label.Name = "SimulationInfo_Label";
+            this.SimulationInfo_Label.Size = new System.Drawing.Size(0, 39);
+            this.SimulationInfo_Label.TabIndex = 12;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 584);
+            this.Controls.Add(this.SimulationInfo_Label);
             this.Controls.Add(this.Statistic_RichTextBox);
             this.Controls.Add(this.CurTime_Label);
             this.Controls.Add(this.ProcessingTime_Label);
@@ -187,6 +198,7 @@
         private System.Windows.Forms.TextBox ProcessingTime_TextBox;
         private System.Windows.Forms.Label CurTime_Label;
         private System.Windows.Forms.RichTextBox Statistic_RichTextBox;
+        private System.Windows.Forms.Label SimulationInfo_Label;
     }
 }
 
