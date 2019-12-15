@@ -130,12 +130,13 @@
             // 
             // CurTime_Label
             // 
+            this.CurTime_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CurTime_Label.AutoSize = true;
-            this.CurTime_Label.Location = new System.Drawing.Point(891, 53);
+            this.CurTime_Label.Location = new System.Drawing.Point(877, 562);
             this.CurTime_Label.Name = "CurTime_Label";
-            this.CurTime_Label.Size = new System.Drawing.Size(42, 13);
+            this.CurTime_Label.Size = new System.Drawing.Size(253, 13);
             this.CurTime_Label.TabIndex = 10;
-            this.CurTime_Label.Text = "Time: 0";
+            this.CurTime_Label.Text = "Copyright 2019, Twillight_Sparkle, All rights reserved";
             // 
             // Statistic_RichTextBox
             // 
@@ -166,7 +167,7 @@
             this.Controls.Add(this.StopSimulation_Button);
             this.Controls.Add(this.StartSimulation_Button);
             this.Name = "MainForm";
-            this.Text = "I\'m Batman";
+            this.Text = "Maybe queueing system simulation";
             this.ResumeLayout(false);
             this.PerformLayout();
 

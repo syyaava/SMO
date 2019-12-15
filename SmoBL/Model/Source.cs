@@ -8,6 +8,9 @@ namespace SmoBL.Model
 {
     public class Source
     {
+        /// <summary>
+        /// Интервал появления заявок.
+        /// </summary>
         public float SpawnDelay { get; set; }
 
         public Source(float spawnDelay)
