@@ -1,17 +1,28 @@
 ﻿using SmoBL.Controller;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SmoBL.Model
 {
+    /// <summary>
+    /// СМО.
+    /// </summary>
     public class QueueingSystem
     {
+        /// <summary>
+        /// Каналы обслуживания.
+        /// </summary>
         public ChannelController[] Channel { get; set; }
+        /// <summary>
+        /// Количество каналов обслуживания.
+        /// </summary>
         public int CountChannel { get; set; }
+        /// <summary>
+        /// Очередь заявок.
+        /// </summary>
         public List<Request> Queue { get; set; }
+        /// <summary>
+        /// Длина очереди.
+        /// </summary>
         public int QueueCapacity { get; set; }
 
         public QueueingSystem(int countChannel, int queueCapacity)

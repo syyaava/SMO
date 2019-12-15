@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SmoBL.Model
+﻿namespace SmoBL.Model
 {
+    /// <summary>
+    /// Источник заявок.
+    /// </summary>
     public class Source
     {
         /// <summary>

@@ -1,12 +1,10 @@
 ﻿using SmoBL.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SmoBL.Controller
 {
+    /// <summary>
+    /// Контроллер канала.
+    /// </summary>
     public class ChannelController
     {
         public Channel Channel;
@@ -16,6 +14,10 @@ namespace SmoBL.Controller
             Channel = new Channel();
         }
 
+        /// <summary>
+        /// Добавить заявку для обслуживания каналом.
+        /// </summary>
+        /// <param name="request">Заявка.</param>
         public void AddRequest(Request request)
         {
             Channel.CurRequest = request;

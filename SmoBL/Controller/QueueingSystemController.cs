@@ -1,13 +1,11 @@
 ﻿using SmoBL.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SmoBL.Controller
 {
+    /// <summary>
+    ///Контроллер системы массового обслуживания.
+    /// </summary>
     public class QueueingSystemController
     {
         private QueueingSystem queueingSystem;
@@ -46,7 +44,6 @@ namespace SmoBL.Controller
             else if(queueingSystem.Queue.Count < queueingSystem.QueueCapacity)
             {
                 queueingSystem.Queue.Add(request);
-                //TODO: сделать чтобы из очереди шли в каналы
             }
             else
             {
@@ -71,12 +68,18 @@ namespace SmoBL.Controller
             }
             return false;
         }
-
+        /// <summary>
+        /// Запуск асинхронного метода для симуляции.
+        /// </summary>
+        /// <param name="processingTime">Время обслуживания заявки.</param>
         public async void SystemOnlineAsync(float processingTime)
         {
             await Task.Run(() => SystemOnline(processingTime));
         }
-
+        /// <summary>
+        /// Главный метод симуляции (создание и обаботка заявок).
+        /// </summary>
+        /// <param name="processingTime">Время обслуживания заявки.</param>
         public void SystemOnline(float processingTime)
         {
             ulong timer = 0;
@@ -93,7 +96,9 @@ namespace SmoBL.Controller
                 timer++;
             }
         }
-
+        /// <summary>
+        /// Обработка заявок в каналах.
+        /// </summary>
         private void Processing()
         {
             for (var i = 0; i < queueingSystem.CountChannel; i++)
@@ -115,6 +120,9 @@ namespace SmoBL.Controller
             QueueProcessing();
         }
 
+        /// <summary>
+        /// Подсчет времени в очереди.
+        /// </summary>
         private void QueueProcessing()
         {
             foreach(var item in queueingSystem.Queue)

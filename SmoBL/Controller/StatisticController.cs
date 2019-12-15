@@ -1,15 +1,16 @@
 ﻿using SmoBL.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmoBL.Controller
 {
+    /// <summary>
+    /// Контроллер статистики.
+    /// </summary>
     public class StatisticController
     {
+        /// <summary>
+        /// Статистика СМО.
+        /// </summary>
         Statistic Statistic;
 
         public StatisticController(RichTextBox richTextBox)
@@ -40,12 +41,18 @@ namespace SmoBL.Controller
         {
             Statistic.CountNotServicedRequest++;
         }
-
+        /// <summary>
+        /// Получить статистику СМО.
+        /// </summary>
+        /// <returns></returns>
         public string GetStatistic()
         {
             return Statistic.ToString();
         }
-
+        /// <summary>
+        /// Увеличить общее время в системе.
+        /// </summary>
+        /// <param name="time"></param>
         public void AddTimeInSystem(float time)
         {
             Statistic.TimeAllRequestInSys += time;

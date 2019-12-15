@@ -1,15 +1,19 @@
 ﻿using SmoBL.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SmoBL.Controller
 {
+    /// <summary>
+    /// Контроллер источника заявок.
+    /// </summary>
     public class SourceController
     {
+        /// <summary>
+        /// Источник заявок.
+        /// </summary>
         public Source Source;
+        /// <summary>
+        /// Состояние системы.
+        /// </summary>
         public bool IsOnline { get; set; }
 
         public SourceController(bool isOnline, Source source)
@@ -17,7 +21,11 @@ namespace SmoBL.Controller
             IsOnline = isOnline;
             Source = source;
         }
-
+        /// <summary>
+        /// Создание заявки.
+        /// </summary>
+        /// <param name="processingTime">Время обслуживания заявки.</param>
+        /// <returns>Новая заявка.</returns>
         public Request SpawnRequest(float processingTime)
         {
             return new Request(processingTime);

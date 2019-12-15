@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmoBL.Model
 {
+    /// <summary>
+    /// Статистика СМО.
+    /// </summary>
     public class Statistic
     {
         /// <summary>
@@ -25,7 +24,9 @@ namespace SmoBL.Model
         /// Суммарное время всех заявок.
         /// </summary>
         public float TimeAllRequestInSys { get; set; }
-
+        /// <summary>
+        /// Объект для вывода статистики.
+        /// </summary>
         public RichTextBox StatisticText;
 
         public Statistic(RichTextBox richTextBox)
