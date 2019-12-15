@@ -1,6 +1,7 @@
 ﻿using SmoBL.Controller;
 using SmoBL.Model;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmoUI
@@ -34,12 +35,11 @@ namespace SmoUI
 
             queueingSystem = new QueueingSystem(countChannel, countQueue);
             sourceController = new SourceController(true, new Source(spanwDelay));
-            statisticController = new StatisticController();
+            statisticController = new StatisticController(Statistic_RichTextBox);
             queueSystemController = new QueueingSystemController(queueingSystem, 
                                                                      statisticController, 
                                                                      sourceController);
-            queueSystemController.SystemOnlineAsync();
-
+            queueSystemController.SystemOnlineAsync(processingTime);
         }
 
         private float GetProcessingTime()
@@ -89,6 +89,13 @@ namespace SmoUI
         private void StopSimulation_Button_Click(object sender, EventArgs e)
         {
             sourceController.IsOnline = false;
+            GetStatistic();
         }
+
+        private void GetStatistic()
+        {
+            Statistic_RichTextBox.Text = statisticController.GetStatistic();
+        }
+
     }
 }

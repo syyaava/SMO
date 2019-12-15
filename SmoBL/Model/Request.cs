@@ -16,13 +16,11 @@ namespace SmoBL.Model
         /// Время обслуживания.
         /// </summary>
         public float ProcessingTime { get; set; }
-        //public bool InSystem { get; set; }
 
-        public Request()
+        public Request(float processingTime)
         {
             TimeInSystem = 0;
-            ProcessingTime = 0;
-           //InSystem = false;
+            ProcessingTime = processingTime;
         }
     }
 }

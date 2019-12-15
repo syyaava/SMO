@@ -18,9 +18,9 @@ namespace SmoBL.Controller
             Source = source;
         }
 
-        public Request SpawnRequest()
+        public Request SpawnRequest(float processingTime)
         {
-            return new Request();
+            return new Request(processingTime);
         }
     }
 }

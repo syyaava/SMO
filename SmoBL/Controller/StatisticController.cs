@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SmoBL.Controller
 {
     public class StatisticController
     {
-        private Statistic Statistic;
+        Statistic Statistic;
 
-        public StatisticController()
+        public StatisticController(RichTextBox richTextBox)
         {
-            Statistic = new Statistic();
+            Statistic = new Statistic(richTextBox);
         }
 
         /// <summary>
@@ -38,6 +39,16 @@ namespace SmoBL.Controller
         public void AddNotServicedRequest()
         {
             Statistic.CountNotServicedRequest++;
+        }
+
+        public string GetStatistic()
+        {
+            return Statistic.ToString();
+        }
+
+        public void AddTimeInSystem(float time)
+        {
+            Statistic.TimeAllRequestInSys += time;
         }
     }
 }

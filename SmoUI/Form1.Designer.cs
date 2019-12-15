@@ -38,6 +38,8 @@
             this.DelayTime_TextBox = new System.Windows.Forms.TextBox();
             this.ProcessingTime_Label = new System.Windows.Forms.Label();
             this.ProcessingTime_TextBox = new System.Windows.Forms.TextBox();
+            this.CurTime_Label = new System.Windows.Forms.Label();
+            this.Statistic_RichTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // StartSimulation_Button
@@ -126,11 +128,33 @@
             this.ProcessingTime_TextBox.Size = new System.Drawing.Size(100, 20);
             this.ProcessingTime_TextBox.TabIndex = 8;
             // 
+            // CurTime_Label
+            // 
+            this.CurTime_Label.AutoSize = true;
+            this.CurTime_Label.Location = new System.Drawing.Point(891, 53);
+            this.CurTime_Label.Name = "CurTime_Label";
+            this.CurTime_Label.Size = new System.Drawing.Size(42, 13);
+            this.CurTime_Label.TabIndex = 10;
+            this.CurTime_Label.Text = "Time: 0";
+            // 
+            // Statistic_RichTextBox
+            // 
+            this.Statistic_RichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Statistic_RichTextBox.Location = new System.Drawing.Point(63, 98);
+            this.Statistic_RichTextBox.Name = "Statistic_RichTextBox";
+            this.Statistic_RichTextBox.ReadOnly = true;
+            this.Statistic_RichTextBox.Size = new System.Drawing.Size(588, 366);
+            this.Statistic_RichTextBox.TabIndex = 11;
+            this.Statistic_RichTextBox.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 584);
+            this.Controls.Add(this.Statistic_RichTextBox);
+            this.Controls.Add(this.CurTime_Label);
             this.Controls.Add(this.ProcessingTime_Label);
             this.Controls.Add(this.ProcessingTime_TextBox);
             this.Controls.Add(this.DelayTime_Label);
@@ -160,6 +184,8 @@
         private System.Windows.Forms.TextBox DelayTime_TextBox;
         private System.Windows.Forms.Label ProcessingTime_Label;
         private System.Windows.Forms.TextBox ProcessingTime_TextBox;
+        private System.Windows.Forms.Label CurTime_Label;
+        private System.Windows.Forms.RichTextBox Statistic_RichTextBox;
     }
 }
 

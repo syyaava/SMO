@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SmoBL.Controller
 {
@@ -28,10 +29,20 @@ namespace SmoBL.Controller
         public void AddRequest(Request request)
         {
             statisticController.AddAllRequest();
+            if(queueingSystem.Queue.Count > 0)
+            {
+                if (CheckFreeChannel(out int index))
+                {
+                    queueingSystem.Channel[index].AddRequest(queueingSystem.Queue[0]);
+                    queueingSystem.Queue.RemoveAt(0);
+                }
+            }
+
             if(queueingSystem.Queue.Count == 0 && CheckFreeChannel(out int ind))
             {
                 queueingSystem.Channel[ind].AddRequest(request);
             }
+
             else if(queueingSystem.Queue.Count < queueingSystem.QueueCapacity)
             {
                 queueingSystem.Queue.Add(request);
@@ -61,12 +72,12 @@ namespace SmoBL.Controller
             return false;
         }
 
-        public async void SystemOnlineAsync()
+        public async void SystemOnlineAsync(float processingTime)
         {
-            await Task.Run(() => SystemOnline());
+            await Task.Run(() => SystemOnline(processingTime));
         }
 
-        public void SystemOnline()
+        public void SystemOnline(float processingTime)
         {
             ulong timer = 0;
             ulong lastSpawn = 0;
@@ -74,10 +85,11 @@ namespace SmoBL.Controller
             {
                 if (sourceController.Source.SpawnDelay < timer - lastSpawn)
                 {
-                    AddRequest(sourceController.SpawnRequest());
+                    lastSpawn = timer;
+                    AddRequest(sourceController.SpawnRequest(processingTime));
                 }
 
-                Processing();
+                Processing();                
                 timer++;
             }
         }
@@ -93,9 +105,21 @@ namespace SmoBL.Controller
                 }
                 else if (ch.Channel.CurRequest != null)
                 {
+                    statisticController.AddTimeInSystem(ch.Channel.CurRequest.TimeInSystem + 
+                                                        ch.Channel.CurRequest.ProcessingTime);
                     ch.Channel.CurRequest = null;
+                    ch.Channel.Timer = 0;
                     statisticController.AddServicedRequest();
                 }
+            }
+            QueueProcessing();
+        }
+
+        private void QueueProcessing()
+        {
+            foreach(var item in queueingSystem.Queue)
+            {
+                item.TimeInSystem++;
             }
         }
     } 
