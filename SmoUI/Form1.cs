@@ -19,8 +19,6 @@ namespace SmoUI
 
         private void StartSimulation_Button_Click(object sender, EventArgs e)
         {
-            StartSimulation_Button.Text = "Stop simulation";
-
             int countChannel;
             countChannel = GetCountChannel();
 
