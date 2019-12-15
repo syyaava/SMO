@@ -37,10 +37,17 @@ namespace SmoUI
             queueingSystem = new QueueingSystem(countChannel, countQueue);
             sourceController = new SourceController(true, new Source(spanwDelay));
             statisticController = new StatisticController(Statistic_RichTextBox);
-            queueSystemController = new QueueingSystemController(queueingSystem, 
-                                                                     statisticController, 
+            queueSystemController = new QueueingSystemController(queueingSystem,
+                                                                     statisticController,
                                                                      sourceController);
+            processingTime = RandomProcessingTime(processingTime * 0.75f, processingTime * 1.25f);
             queueSystemController.SystemOnlineAsync(processingTime);
+        }
+
+        private float RandomProcessingTime(double a, double b)
+        {
+            var rnd = new Random().NextDouble();
+            return (float)(a * rnd + b * (1 - rnd));
         }
 
         private float GetProcessingTime()

@@ -177,6 +177,7 @@
             this.Controls.Add(this.CountChannel_TextBox);
             this.Controls.Add(this.StopSimulation_Button);
             this.Controls.Add(this.StartSimulation_Button);
+            this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "MainForm";
             this.Text = "Maybe queueing system simulation";
             this.ResumeLayout(false);
