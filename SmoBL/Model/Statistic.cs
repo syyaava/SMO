@@ -27,15 +27,13 @@ namespace SmoBL.Model
         /// <summary>
         /// Объект для вывода статистики.
         /// </summary>
-        public RichTextBox StatisticText;
 
-        public Statistic(RichTextBox richTextBox)
+        public Statistic()
         {
             CountAllRequest = 0;
             CountServicedRequest = 0;
             CountNotServicedRequest = 0;
             TimeAllRequestInSys = 0;
-            StatisticText = richTextBox;
         }
 
         public override string ToString()

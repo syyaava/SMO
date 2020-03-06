@@ -38,7 +38,6 @@
             this.DelayTime_TextBox = new System.Windows.Forms.TextBox();
             this.ProcessingTime_Label = new System.Windows.Forms.Label();
             this.ProcessingTime_TextBox = new System.Windows.Forms.TextBox();
-            this.CurTime_Label = new System.Windows.Forms.Label();
             this.Statistic_RichTextBox = new System.Windows.Forms.RichTextBox();
             this.SimulationInfo_Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -129,16 +128,6 @@
             this.ProcessingTime_TextBox.Size = new System.Drawing.Size(100, 20);
             this.ProcessingTime_TextBox.TabIndex = 8;
             // 
-            // CurTime_Label
-            // 
-            this.CurTime_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CurTime_Label.AutoSize = true;
-            this.CurTime_Label.Location = new System.Drawing.Point(877, 562);
-            this.CurTime_Label.Name = "CurTime_Label";
-            this.CurTime_Label.Size = new System.Drawing.Size(253, 13);
-            this.CurTime_Label.TabIndex = 10;
-            this.CurTime_Label.Text = "Copyright 2019, Twillight_Sparkle, All rights reserved";
-            // 
             // Statistic_RichTextBox
             // 
             this.Statistic_RichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -166,7 +155,6 @@
             this.ClientSize = new System.Drawing.Size(1129, 584);
             this.Controls.Add(this.SimulationInfo_Label);
             this.Controls.Add(this.Statistic_RichTextBox);
-            this.Controls.Add(this.CurTime_Label);
             this.Controls.Add(this.ProcessingTime_Label);
             this.Controls.Add(this.ProcessingTime_TextBox);
             this.Controls.Add(this.DelayTime_Label);
@@ -179,7 +167,7 @@
             this.Controls.Add(this.StartSimulation_Button);
             this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "MainForm";
-            this.Text = "Maybe queueing system simulation";
+            this.Text = "Queueing system simulation";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,7 +185,6 @@
         private System.Windows.Forms.TextBox DelayTime_TextBox;
         private System.Windows.Forms.Label ProcessingTime_Label;
         private System.Windows.Forms.TextBox ProcessingTime_TextBox;
-        private System.Windows.Forms.Label CurTime_Label;
         private System.Windows.Forms.RichTextBox Statistic_RichTextBox;
         private System.Windows.Forms.Label SimulationInfo_Label;
     }

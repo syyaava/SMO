@@ -36,10 +36,11 @@ namespace SmoUI
 
             queueingSystem = new QueueingSystem(countChannel, countQueue);
             sourceController = new SourceController(true, new Source(spanwDelay));
-            statisticController = new StatisticController(Statistic_RichTextBox);
+            statisticController = new StatisticController();
             queueSystemController = new QueueingSystemController(queueingSystem,
-                                                                     statisticController,
-                                                                     sourceController);
+                                                                 statisticController,
+                                                                 sourceController,
+                                                                 this.Statistic_RichTextBox);
             processingTime = RandomProcessingTime(processingTime * 0.75f, processingTime * 1.25f);
             queueSystemController.SystemOnlineAsync(processingTime);
         }
@@ -103,7 +104,7 @@ namespace SmoUI
 
         private void GetStatistic()
         {
-            Statistic_RichTextBox.Text = statisticController.GetStatistic();
+            Statistic_RichTextBox.Invoke((Action)delegate { Statistic_RichTextBox.Text = statisticController.GetStatistic(); });
         }
 
     }

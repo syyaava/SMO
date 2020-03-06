@@ -13,9 +13,9 @@ namespace SmoBL.Controller
         /// </summary>
         Statistic Statistic;
 
-        public StatisticController(RichTextBox richTextBox)
+        public StatisticController()
         {
-            Statistic = new Statistic(richTextBox);
+            Statistic = new Statistic();
         }
 
         /// <summary>
@@ -49,6 +49,7 @@ namespace SmoBL.Controller
         {
             return Statistic.ToString();
         }
+
         /// <summary>
         /// Увеличить общее время в системе.
         /// </summary>
